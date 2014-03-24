@@ -1,5 +1,6 @@
 function [] = msk_mod(bity)
 %t=[0:0.05:length(bity)];
+%próba mikrofonu, jak mnie słychać?
 ndt=100;
 t=0:1/ndt:1-1/ndt;
 syg=zeros(1,ndt*length(bity));
