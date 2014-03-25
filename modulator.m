@@ -1,5 +1,7 @@
-function [syg] = msk_mod(bity,ndt)
-%t=[0:0.05:length(bity)];
+function [syg] = modulator(bity,ndt)
+%bity należy wklepać osobno, np. zmienna bity=[1 0 0 1 1 0 0 1]
+%ndt to ilość próbek, im większe tym dokładniejszy wykres
+
 t=0:1/ndt:1-1/ndt;
 syg=zeros(1,ndt*length(bity));
 if bity(1)==1
@@ -40,10 +42,5 @@ for i=2:length(bity)
     end
     
     
+end 
 end
-%T=0:length(bity)*ndt-1;    //
-%T=T/100;                   // przeniesione do main_msk.m
-%plot(T,syg);               //
-    
-end
-
