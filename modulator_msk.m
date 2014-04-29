@@ -1,4 +1,4 @@
-function [syg] = modulator(bity,ndt)
+function [syg] = modulator_msk(bity,ndt)
 %bity należy wklepać osobno, np. zmienna bity=[1 0 0 1 1 0 0 1]
 %ndt to ilość próbek, im większe tym dokładniejszy wykres
 
