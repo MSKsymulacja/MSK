@@ -6,6 +6,7 @@ BER=zeros(1,length(wektor_SNR));
 for i=1:length(wektor_SNR)
    BER(i)=glowny_msk(n_probek,wektor_SNR(i));
 end
+    figure(2)
 semilogy(wektor_SNR,BER,'*r');
 xlabel('SNR');
 ylabel('BER');
