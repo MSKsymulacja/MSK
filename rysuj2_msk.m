@@ -10,31 +10,25 @@ ndt=100;                                   % ilosc probkowan w czasie trwania je
 %slowo_bitowe=randi(2,1,ilosc_bitow) - 1;
 ilosc_bitow=length(slowo_bitowe);
 sygnal=modulator_msk(slowo_bitowe,ndt); 
-zmienna=zeros(1,length(slowo_bitowe)+1);
-for i=1:length(slowo_bitowe)
-    zmienna(i)=slowo_bitowe(i);
-end
 syg_szum=awgn(sygnal,snr);
-
 zdemodulowane_bity=demodulator_msk(syg_szum,ilosc_bitow);
 
-if(slowo_bitowe(length(slowo_bitowe))==1);
-   zmienna(length(zmienna))=1;
-else
-   zmienna(length(zmienna))=0;
-end
+st_b=zeros(1,ilosc_bitow+1);
+st_b(1:ilosc_bitow)=slowo_bitowe;
+st_dem=zeros(1,ilosc_bitow+1);
+st_dem(1:ilosc_bitow)=slowo_bitowe;
 
 figure(2)
     subplot(4,1,1)
-    stairs(zmienna)
-    axis([1 ilosc_bitow+1 -0.2 1.2]) 
+    stairs(0:ilosc_bitow,st_b)
+    axis([0 ilosc_bitow -0.2 1.2]) 
     subplot(4,1,2)
     plot(0:1/ndt:ilosc_bitow-1/ndt,sygnal)
     subplot(4,1,3)
     plot(0:1/ndt:ilosc_bitow-1/ndt,syg_szum)
     subplot(4,1,4)
-    stairs(zdemodulowane_bity)
-    axis([1 ilosc_bitow -0.2 1.2]) 
+    stairs(0:ilosc_bitow,st_dem)
+    axis([0 ilosc_bitow -0.2 1.2]) 
 
 
 end
