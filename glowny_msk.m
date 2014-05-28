@@ -3,6 +3,11 @@ function [error] = glowny_msk( ilosc_bitow,snr )
 ndt=100;                                    % ilosc probkowan w czasie trwania jednego bitu
 part_size=1e4; % podzial na czesci aby nie obciazal tak pamieci przy wiekszej (1e6) ilosci bitow
 part_n=floor(ilosc_bitow/part_size);
+if part_n<1
+    part_n=1;
+    part_size=0;
+end
+
 suma_err=0;
 for i=1:part_n
     

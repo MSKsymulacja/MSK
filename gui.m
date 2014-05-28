@@ -77,10 +77,9 @@ end
 % --- Executes on button press in pb4.
 function pb4_Callback(hObject, eventdata, handles)
 bityy=str2num(get(handles.e1,'String'));
-snrr=str2num(get(handles.edit3,'String'));  
-
-wart = get(handles.uipanel2, 'SelectedObject')
-tagus = get(wart,'Tag')
+snrr=str2num(get(handles.edit3,'String'));
+wart = get(handles.uipanel2, 'SelectedObject');
+tagus = get(wart,'Tag');
 switch tagus;
      case 'losowo'
      rysuj_msk(bityy,snrr);   

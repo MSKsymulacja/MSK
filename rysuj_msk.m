@@ -11,7 +11,7 @@ zdemodulowane_bity=demodulator_msk(syg_szum,ilosc_bitow);
 st_b=zeros(1,ilosc_bitow+1);
 st_b(1:ilosc_bitow)=slowo_bitowe;
 st_dem=zeros(1,ilosc_bitow+1);
-st_dem(1:ilosc_bitow)=slowo_bitowe;
+st_dem(1:ilosc_bitow)=zdemodulowane_bity;
 figure(2)
     subplot(4,1,1)
     stairs(0:ilosc_bitow,st_b)
