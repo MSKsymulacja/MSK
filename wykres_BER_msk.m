@@ -16,8 +16,12 @@ EdoN=10.^( ((d:g))/10);
 tru=1/2*erfc(sqrt(EdoN));
     figure(2)
 semilogy(wektor_SNR,BER,'*b-',wektor_SNR,dolny,'*g-',wektor_SNR,gorny,'*r-',d:g,tru,'k');
-xlabel('SNR');
-ylabel('BER');
-
+lala=xlabel('SNR');
+set(lala,'FontAngle','italic')
+lulu=ylabel('BER');
+set(lulu,'FontAngle','italic')
+hleg1 = legend('Zmierzony BER','Górny przedzia³ Wilsona','Dolny przedzia³ Wilsona','Sta³a teoretyczna');
+set(hleg1,'Location','SouthOutside')
+set(hleg1,'FontAngle','italic')
 end
 
