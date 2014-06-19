@@ -1,7 +1,7 @@
 function [error] = glowny_msk( ilosc_bitow,snr )
 E=1;
 Tb=1;
-ndt=10;                                    % ilosc probkowan w czasie trwania jednego bitu
+ndt=100;                                    % ilosc probkowan w czasie trwania jednego bitu
 fs=ndt/Tb;
 part_size=1e4; % podzial na czesci aby nie obciazal tak pamieci przy wiekszej ilosci bitow
 part_n=floor(ilosc_bitow/part_size);
