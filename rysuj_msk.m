@@ -11,9 +11,9 @@ slowo_bitowe=randi(2,1,part_size+2+nieparzyste) - 1;    % slowo bitowe wygenerow
 
 faktyczne_slowo_bitowe=slowo_bitowe(2:end-1-nieparzyste);
 % modulator
-sygnal=sqrt(2*E/Tb)*modulator_msk(slowo_bitowe,ndt); 
+sygnal=2*sqrt(E/Tb)*modulator_msk(slowo_bitowe,ndt); 
 %kana³
-N=fs*10^( (-snr)/10);
+N=E*fs*10^( (-snr)/10);
 sigma=sqrt(N);
 szum=sigma*randn(1,(part_size+nieparzyste+1)*ndt);
 syg_szum=sygnal+szum;

@@ -14,9 +14,9 @@ p(2:end-1-nieparzyste)=slowo_bitowe;
 slowo_bitowe=p;
 faktyczne_slowo_bitowe=slowo_bitowe(2:end-1-nieparzyste);
 % modulator
-sygnal=sqrt(2*E/Tb)*modulator_msk(slowo_bitowe,ndt); 
+sygnal=2*sqrt(E/Tb)*modulator_msk(slowo_bitowe,ndt); 
 %kana³
-N=fs*10^( (-snr)/10);
+N=E*fs*10^( (-snr)/10);
 sigma=sqrt(N);
 szum=sigma*randn(1,(part_size+nieparzyste+1)*ndt);
 syg_szum=sygnal+szum;
