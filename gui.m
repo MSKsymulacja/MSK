@@ -29,38 +29,31 @@ end
 
 % --------------------------------------------------------------------
 
-function e1_Callback(hObject, eventdata, handles)
+function e11_Callback(hObject, eventdata, handles)
 end
-function e1_CreateFcn(hObject, eventdata, handles)
+function e11_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
 end
-function uipanel2_SelectionChangeFcn(hObject, eventdata, handles)
+function uipanel7_SelectionChangeFcn(hObject, eventdata, handles)
 switch get(eventdata.NewValue,'Tag') % Get Tag of selected object
     case 'losowo'
-	  set(findobj('Tag','t1'),'String','Liczba bitów:');
-	  set(findobj('Tag','e1'),'String','1e2');      
+	  set(findobj('Tag','t11'),'String','Liczba bitów:');
+	  set(findobj('Tag','e11'),'String','1e2');      
      case 'recznie'    
-	   set(findobj('Tag','t1'),'String','Podaj bity:');
-       	  set(findobj('Tag','e1'),'String','[1 0 0 1 1 0]');     
+	   set(findobj('Tag','t11'),'String','Podaj bity:');
+       set(findobj('Tag','e11'),'String','[1 0 0 1 1 0]');     
 end
 end
 
 function generuj1_Callback(hObject, eventdata, handles)
-bity=str2num(get(handles.e1,'String'));
+bity=str2num(get(handles.edit7,'String'));
 snrx=str2num(get(handles.edit2,'String'));
 snr=snrx(1):snrx(length(snrx));
 wilson=str2num(get(handles.edit4,'String'));
-wart = get(handles.uipanel2, 'SelectedObject');
-tagus = get(wart,'Tag');
-switch tagus;
-     case 'losowo'
      wykres_BER_msk(bity,snr,wilson/100) 
-     case 'recznie'  
-     bity2=length(bity);
-	 wykres_BER_msk(bity2,snr,wilson/100)
-end
+
 end
 
 function edit3_Callback(hObject, eventdata, handles)
@@ -72,19 +65,13 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 end
 
-% --- Executes on button press in pushbutton2.
-
-% --- If Enable == 'on', executes on mouse press in 5 pixel border.
-% --- Otherwise, executes on mouse press in 5 pixel border or over generuj1.
 function generuj1_ButtonDownFcn(hObject, eventdata, handles)
 end
 
-
-% --- Executes on button press in pb4.
 function pb4_Callback(hObject, eventdata, handles)
-bityy=str2num(get(handles.e1,'String'));
-snrr=str2num(get(handles.edit3,'String'));
-wart = get(handles.uipanel2, 'SelectedObject');
+bityy=str2num(get(handles.e11,'String'));
+snrr=str2num(get(handles.edit8,'String'));
+wart = get(handles.uipanel7, 'SelectedObject');
 tagus = get(wart,'Tag');
 switch tagus;
      case 'losowo'
@@ -94,31 +81,68 @@ switch tagus;
 end
 end
 
-
-
 function edit4_Callback(hObject, eventdata, handles)
-% hObject    handle to edit4 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of edit4 as text
-%        str2double(get(hObject,'String')) returns contents of edit4 as a double
-
 end
-% --- Executes during object creation, after setting all properties.
-function edit4_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit4 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
+function edit4_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
 end
 
-
-
 function edit2_Callback(hObject, eventdata, handles)
+end
+
+function edit7_Callback(hObject, eventdata, handles)
+end
+
+function edit7_CreateFcn(hObject, eventdata, handles)
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+end
+
+function edit8_Callback(hObject, eventdata, handles)
+end
+
+function edit8_CreateFcn(hObject, eventdata, handles)
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+end
+
+function edit9_Callback(hObject, eventdata, handles)
+end
+
+function edit9_CreateFcn(hObject, eventdata, handles)
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+end
+
+function edit10_Callback(hObject, eventdata, handles)
+end
+
+function edit10_CreateFcn(hObject, eventdata, handles)
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+end
+
+function edit11_Callback(hObject, eventdata, handles)
+end
+
+function edit11_CreateFcn(hObject, eventdata, handles)
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+end
+
+function pb5_Callback(hObject, eventdata, handles)
+przedzial=str2num(get(handles.edit9,'String'));
+snrx5=str2num(get(handles.edit10,'String'));
+snr5=snrx5(1):snrx5(length(snrx5));
+wilson5=str2num(get(handles.edit11,'String'));
+t=zmienna_il(przedzial,snr5,wilson5/100) 
+t
 end
