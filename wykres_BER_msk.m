@@ -20,7 +20,7 @@ lala=xlabel('SNR');
 set(lala,'FontAngle','italic')
 lulu=ylabel('BER');
 set(lulu,'FontAngle','italic')
-hleg1 = legend('Zmierzony BER','Górny przedzia³ Wilsona','Dolny przedzia³ Wilsona','Sta³a teoretyczna');
+hleg1 = legend('Zmierzony BER','Górny przedzia³ Wilsona','Dolny przedzia³ Wilsona','Teoretyczne wartoœci BER');
 set(hleg1,'Location','SouthOutside')
 set(hleg1,'FontAngle','italic')
 end
