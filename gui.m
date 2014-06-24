@@ -147,3 +147,9 @@ wilson5=str2num(get(handles.edit11,'String'));
 przedzial=cat(2,num2str(down),' - ',num2str(up));
 h=msgbox(cat(2,{'Wymagana liczba powtórzeñ: '},num2str(t),{'Zmierzony BER: '},num2str(ber),{'Przedzia³ Wilsona dla zadanych parametrów: '},przedzial),'Obliczono');
 end
+
+
+% --- Executes on button press in Dokumentacja.
+function Dokumentacja_Callback(hObject, eventdata, handles)
+open('Dokumentacja.pdf')
+end
