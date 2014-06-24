@@ -7,12 +7,21 @@ gorny=zeros(1,length(wektor_SNR));
 dolny=zeros(1,length(wektor_SNR));
 h=waitbar(0,'Rysujê wykres BER');
 for i=1:length(wektor_SNR)
+      if ~ishandle(h)
+              break
+        end
         waitbar(i/length(wektor_SNR))
     
    BER(i)=glowny_msk(n_probek,wektor_SNR(i));
    [gorny(i),dolny(i)]=wilson_conf(BER(i)*n_probek,n_probek,alfa);
 end
-close(h)
+
+ if ~ishandle(h)
+     h=msgbox('Przerwano');
+    return
+  else
+           close(h);
+
 g=max(wektor_SNR);
 d=min(wektor_SNR);
 tru=zeros(1,length(d:g));
@@ -27,5 +36,6 @@ set(lulu,'FontAngle','italic')
 hleg1 = legend('Zmierzony BER','Górny przedzia³ Wilsona','Dolny przedzia³ Wilsona','Teoretyczne wartoœci BER');
 set(hleg1,'Location','SouthOutside')
 set(hleg1,'FontAngle','italic')
+       end
 end
 

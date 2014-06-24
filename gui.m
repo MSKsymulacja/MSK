@@ -145,7 +145,11 @@ snr5=snrx5(1):snrx5(length(snrx5));
 wilson5=str2num(get(handles.edit11,'String'));
 [t,ber,up,down]=zmienna_il(przedzial,snr5,wilson5/100);
 przedzial=cat(2,num2str(down),' - ',num2str(up));
+if (t==0)
+   h=msgbox('Przerwano');
+else
 h=msgbox(cat(2,{'Wymagana liczba powtórzeñ: '},num2str(t),{'Zmierzony BER: '},num2str(ber),{'Przedzia³ Wilsona dla zadanych parametrów: '},przedzial),'Obliczono');
+end
 end
 
 
