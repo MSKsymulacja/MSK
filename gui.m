@@ -49,8 +49,8 @@ end
 
 function generuj1_Callback(hObject, eventdata, handles)
 bity=str2num(get(handles.edit7,'String'));
-snrx=str2num(get(handles.edit2,'String'));
-snr=snrx(1):snrx(length(snrx));
+snr=str2num(get(handles.edit2,'String'));
+%snr=snrx(1):snrx(length(snrx));
 wilson=str2num(get(handles.edit4,'String'));
      wykres_BER_msk(bity,snr,wilson/100) 
 
