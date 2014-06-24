@@ -34,14 +34,17 @@ figure(2)
     subplot(4,1,1)
     stairs(0:ilosc_bitow,st_b)
     axis([0 ilosc_bitow -0.2 1.2]) 
+    title('Wejœciowe s³owo bitowe');
     subplot(4,1,2)
     plot(0:1/ndt:ilosc_bitow-1/ndt,sygnal(ndt+1:(ilosc_bitow+1)*ndt));
+    title('Sygna³ na wyjœciu modulatora');
     subplot(4,1,3)
     plot(0:1/ndt:ilosc_bitow-1/ndt,syg_szum(ndt+1:(ilosc_bitow+1)*ndt));
+    title('Sygna³ po przejœciu przez kana³ AWGN/Na wejœciu demodulatora');
     subplot(4,1,4)
     stairs(0:ilosc_bitow,st_dem)
     axis([0 ilosc_bitow -0.2 1.2]) 
-
+    title('Zdemodulowane s³owo bitowe');
 
 end
 
